@@ -17,7 +17,7 @@ To run the container on Windows WSL2 and Docker Desktop on Windows is needed. Pl
 
 The docker-sandbox folder contains a complete sandbox configuration with the Digital Assistant server, Postgresql database and Elastic Search servers.
 
-`docker compose up` starts the environment, creates new databases and a new, empty tenant. The default server url is http://localhost
+`docker compose up` starts the environment, creates new databases and a new, empty tenant. The default server url is http://localhost:9903
 
 
 ## System Administration
@@ -41,4 +41,11 @@ Username: `admin@tenant.com`
 Password: `adenin*123`
 
 
+## Initial Configuration
 
+The following configuration information needs to be added to a fresh database:
+
+
+### Search 
+
+Go to Settings (http://localhost:9903/App/BusinessObjects?entitytype=setting) and find the record with the name `AzureSearch`. Select _Service Provider_ `Elastic`, _Elastic Host_ `elasticsearch`
